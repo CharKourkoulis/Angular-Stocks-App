@@ -1,0 +1,24 @@
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--4-col"></div>
+  <div class="mdl-cell mdl-cell--4-col">
+  <form  (submit)="add()">
+  <input  name="stock" [(ngModel)] = "stock" style ="width:150px; float:left;" class="mdl-textfield__input" type="text" placeholder="Add Stock..." />
+  </form>
+
+  <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="float:right; margin-bottom:5px;" target="blank" href="https://github.com/angular-in-action/api/blob/master/companies.csv" >Go to Companies</a>
+  
+  <table class="mdl-data-table mdl-data-table--selectable mdl-shadow--2dp"
+  style="width: 100%;">
+  <tbody>
+  <tr *ngFor="let symbol of symbols">
+  <td class="mdl-data-table__cell--non-numeric">{{symbol}}</td>
+  <td style="padding-top: 6px;">
+  <button class="mdl-button" (click)="remove(symbol)">Remove</button>
+  </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+<div class="mdl-cell mdl-cell--4-col"></div>
+</div>
